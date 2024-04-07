@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<main role="main" class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Edit Profile</h2>
+      <form action="/profile/update" method="post">
+        <input type="hidden" name="_method" value="put">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" value="<%= user.username %>" autocomplete="username">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" autocomplete="email">
+        </div>
+        <div class="mb-3">
+          <label for="legalName" class="form-label">Legal Name</label>
+          <input type="text" class="form-control" id="legalName" name="legalName" value="<%= user.legalName %>" autocomplete="name">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" name="address" value="<%= user.address %>" autocomplete="street-address">
+        </div>
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" name="city" value="<%= user.city %>" autocomplete="address-level2">
+        </div>
+        <div class="mb-3">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control" id="state" name="state" value="<%= user.state %>" autocomplete="address-level1">
+        </div>
+        <div class="mb-3">
+          <label for="zipCode" class="form-label">Zip Code</label>
+          <input type="text" class="form-control" id="zipCode" name="zipCode" value="<%= user.zipCode %>" autocomplete="postal-code">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+      </form>
+    </div>
+  </div>
+</main>
+</body>
+<%- include('partials/_footer.ejs') %>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<main role="main" class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Create Game Room</h2>
+      <form action="/game/create" method="post">
+        <div class="mb-3">
+          <label for="gameType" class="form-label">Game Type</label>
+          <select class="form-control" id="gameType" name="gameType" required>
+            <option value="">Select Game Type</option>
+            <option value="Blackjack">Blackjack</option>
+            <option value="Poker">Poker</option>
+            <option value="Slots">Slots</option>
+            <option value="Dice">Dice</option>
+            <option value="Coin Toss">Coin Toss</option>
+            <option value="ROYAL">ROYAL</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="maxPlayers" class="form-label">Max Players</label>
+          <input type="number" class="form-control" id="maxPlayers" name="maxPlayers" min="1" max="10" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Room</button>
+      </form>
+    </div>
+  </div>
+</main>
+</body>
+<%- include('partials/_footer.ejs') %>
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    console.log('Attempting to create a new game room...');
+  });
+</script>
+</html>
