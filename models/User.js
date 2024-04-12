@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   legalName: { type: String, required: true },
   birthday: { type: Date, required: true },
   isVerified: { type: Boolean, default: false },
-  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], // Added friends field
+  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
 userSchema.pre('save', function(next) {

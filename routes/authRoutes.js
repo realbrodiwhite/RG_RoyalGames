@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-const STRAPI_BASE_URL = 'http://localhost:1337';
+const STRAPI_BASE_URL = 'http://your-strapi-instance-url:port'; // Update this line with your actual Strapi instance URL and port
 
 router.get('/auth/register', (req, res) => {
   res.render('register');
@@ -63,7 +63,7 @@ router.post('/auth/login', async (req, res) => {
 router.get('/auth/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      console.error('Error during session destruction:', err);
+      console.error('Error during session destruction:', err.message);
       console.error(err.stack);
       return res.status(500).send('Error logging out');
     }
