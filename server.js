@@ -12,6 +12,8 @@ const friendRoutes = require('./routes/friendRoutes'); // Import the friend rout
 const http = require('http');
 const socketIo = require('socket.io');
 const Message = require('./models/Message'); // Import the Message model
+const User = require('./models/User'); // Import the User model for friend system
+const GameRoom = require('./models/GameRoom'); // Import the GameRoom model for chat feature
 
 if (!process.env.DATABASE_URL || !process.env.SESSION_SECRET) {
   console.error("Error: config environment variables not set. Please create/edit .env configuration file.");
