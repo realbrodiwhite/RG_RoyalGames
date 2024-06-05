@@ -12,7 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "@strapi/strapi": "4.22.1",
-    "@strapi/plugin-users-permissions": "4.22.1",
+    "@strapi/plugin-users-permissions": "4.24.5",
     "@strapi/plugin-i18n": "4.22.1",
     "@strapi/plugin-cloud": "4.22.1",
     "@strapi/database-mongoose": "^1.0.0",
